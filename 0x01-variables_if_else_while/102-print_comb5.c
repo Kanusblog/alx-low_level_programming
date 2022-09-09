@@ -6,29 +6,43 @@
  * starting from 0, followed by a new line.
  * Return: 0
  */
+#include<stdio.h>
+
+/**
+ * main - Entry Point
+ * Description: Write a program that prints all possible
+ * different combinations of two digits
+ * Return: 0
+ */
+
 int main(void)
 {
-	int c;
-	int d = 0;
+	int firstDigit = 0, seconDigit;
 
-	while (d < 10)
+	while (firstDigit <= 99)
 	{
-		c = 0;
-		while (c < 10)
+		seconDigit = firstDigit;
+		while (seconDigit <= 99)
 		{
-
-			putchar('0' + d);
-			putchar('0' + c);
-
-			if (c + d != 18)
+			if (seconDigit != firstDigit)
 			{
-				putchar(',');
+				putchar((firstDigit / 10) + 48);
+				putchar((firstDigit % 10) + 48);
 				putchar(' ');
+				putchar((seconDigit / 10) + 48);
+				putchar((seconDigit % 10) + 48);
+
+				if (firstDigit != 98 || seconDigit != 99)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
-			c++;
+			++seconDigit;
 		}
-		d++;
+		++firstDigit;
 	}
 	putchar('\n');
+
 	return (0);
 }
