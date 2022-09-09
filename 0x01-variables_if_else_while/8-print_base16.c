@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 #include <stdlib.h>
 /**
  * main - main block
@@ -8,19 +9,21 @@
  */
 int main(void)
 {
-	char d = '0';
+	int i;
+	char l;
 
-	while (d <= '9')
+	i = 48;
+	while  (i < 58)
 	{
-		putchar(d);
-		d++;
+		putchar(i);
+		i++;
 	}
 
-	char c = 'a';
-	while (c <= 'f')
+	l = 'a';
+	while (l <= 'f')
 	{
-		putchar(c);
-		c++;
+		putchar(l);
+		l++;
 	}
 
 	putchar('\n');
